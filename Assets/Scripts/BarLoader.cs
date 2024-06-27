@@ -21,7 +21,7 @@ namespace BarData
                 instance = this;
             }
 
-            LoadBars("G:\\Code\\PW\\Binary.txt");
+            LoadBars("Binary.txt");
             //PrintAllBars();
         }
 

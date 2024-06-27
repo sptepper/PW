@@ -53,29 +53,37 @@ public class Voxelizer : MonoBehaviour
         foreach (BarData.Bar b in BarData.BarLoader.instance.bars)
             VoxelizeBar(b, height++);
 
-        // Lock known
-        foreach(var l in LEAK_LOCK)
-            VoxelBars[l.Item1].lockPos = l.Item2;
+        //
+        // Lock known positions
+        //
+        /*foreach(var l in LEAK_LOCK)
+            VoxelBars[l.Item1].lockPos = l.Item2;*/
 
-        // Add unknown Greys
-        while(VoxelBars.Count < FORCE_SIZE)
-            AddMysteryBar();
+        //
+        // Add unknown but assumed bars
+        //
+        /*while(VoxelBars.Count < FORCE_SIZE)
+            AddMysteryBar();*/
 
-        RandomizeBars();
+        //RandomizeBars();
 
-
-        Debug.Log("Beginning Cycle");
+        //
+        // Slow Cycle images to get out of Local min/max
+        //
+        /*Debug.Log("Beginning Cycle");
         imagecycle = CycleBars(CYCLE_S);
-        StartCoroutine(imagecycle);
+        StartCoroutine(imagecycle);*/
 
-        Debug.Log("Beginning Swaps");
+        //
+        // Random Swap towards Min or Max
+        //
+        /*Debug.Log("Beginning Swaps");
         //swapsort = SwapToMaxDist(SWAP_S);
         swapsort = SwapToMinDist(SWAP_S);
-        StartCoroutine(swapsort);
+        StartCoroutine(swapsort);*/
 
         //FindInverseBars();
         //PositionInverses();
-
 
         //VoxelBars.Sort(CompareBySolveSort);
 
